@@ -1,5 +1,6 @@
 package com.example.portfolioapp
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -21,6 +22,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -33,6 +36,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.portfolioapp.ui.theme.PortfolioAppTheme
+import com.example.portfolioapp.ui.theme.StateManagement
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,13 +44,20 @@ class MainActivity : ComponentActivity() {
         setContent {
             PortfolioAppTheme {
                 Portfolio()
+               // StateManagement()
             }
         }
     }
 }
 
+@SuppressLint("RememberReturnType")
 @Composable
 fun Portfolio() {
+
+    var isOpen = remember{
+
+        mutableStateOf(false)
+    }
     Surface(
         shadowElevation = 8.dp,
         shape = RoundedCornerShape(12.dp),
@@ -91,14 +102,19 @@ fun Portfolio() {
                     modifier = Modifier.padding(horizontal = 8.dp))
             }
             Spacer(modifier = Modifier.height(height = 12.dp))
-            Button(onClick = { /*TODO*/ }) {
+            Button(onClick = {
+
+                isOpen.value = !isOpen.value
+            }) {
                 Text(text = "My Projects")
             }
 
-            LazyColumn{
-                items(getProjectList()){
+            if (isOpen.value) {
+                LazyColumn {
+                    items(getProjectList()) {
 
-                    ProjectItem(it)
+                        ProjectItem(it)
+                    }
                 }
             }
         }
