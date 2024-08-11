@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">ReceipeApp2</string>
+    <string name="email">Email</string>
+
+
+    <string name="hintEmail">Enter your email address</string>
+    <string name="hintpass">Enter your password</string>
+    <string name="hintconfirmpass">Enter yourconfirm  password</string>
+    <string name="password">Password</string>
+    <string name="continue_with_google">Continue with <b>Google  </b></string>
+    <string name="continue_with_apple">Continue with<b> Apple </b></string>
+    <string name="hintFullName">Enter your full name</string>
+    <string name="hintPhnNum">Enter your phone number</string>
+    <string name="hintPass">**********</string>
+
+    <string name="full_name">Full Name</string>
+    <string name="phone">Phone Number</string>
+    <string name="err_internet_connection">No internet connection\n</string>
+    <string name="tryagain">TYry again\n</string>
+</resources>

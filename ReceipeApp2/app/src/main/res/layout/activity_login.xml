@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Login.LoginAct">
+
+    <include
+        android:id="@+id/customLay"
+        layout="@layout/common_appbar"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/customLay"
+        android:layout_marginRight="@dimen/_8sdp"
+        android:layout_marginLeft="@dimen/_8sdp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_8sdp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/txtWlcm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/txtTitle"
+                android:text="Welcome!" />
+
+            <TextView
+                android:id="@+id/txtdesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/txtdesc"
+                android:text="please login or sign up to continue our app" />
+
+
+            <TextView
+                android:id="@+id/txtEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/edTitle"
+                android:text="@string/email" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                style="@style/edBoxStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="30"
+                android:inputType="text|textCapSentences|textEmailAddress"
+                android:hint="@string/hintEmail"/>
+
+
+            <TextView
+                android:id="@+id/txtPass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/edTitle"
+                android:text="@string/password" />
+
+            <EditText
+                android:id="@+id/etPass"
+                style="@style/edBoxStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="30"
+                android:inputType="text|textCapSentences|textEmailAddress"
+                android:hint="@string/hintpass"/>
+
+
+            <android.widget.Button
+                android:id="@+id/btnLogin"
+                style="@style/btnDesign"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_24sdp"
+                android:text="Login"
+                android:textAlignment="center" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_24sdp">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_toStartOf="@+id/or"
+                    android:layout_centerVertical="true"
+                    android:background="@color/grey" />
+
+                <TextView
+                    android:id="@+id/or"
+                    android:layout_weight="1.2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="@dimen/_minus3sdp"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="@dimen/_14ssp"
+                    android:text="or"
+                    android:textStyle="bold"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_1sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_toEndOf="@+id/or"
+                    android:layout_weight="0.6"
+                    android:background="@color/grey" />
+
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                style="@style/btnDesign"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:backgroundTint="@color/blue">
+            <ImageView
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:src="@drawable/fb"/>
+
+                <TextView
+                    android:id="@+id/txtfb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    style="@style/txtdesc"
+                    android:textSize="@dimen/_14ssp"
+                    android:textColor="@color/white"
+                    android:text="Continue with Facebook" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                style="@style/btnDesign"
+                android:background="@drawable/btn_back"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_12sdp"
+               >
+            <ImageView
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_marginRight="@dimen/_2sdp"
+                android:src="@drawable/google"/>
+
+                <TextView
+                    android:id="@+id/txtggl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    style="@style/txtdesc"
+                    android:textSize="@dimen/_14ssp"
+                    android:textColor="@color/grey"
+                    android:text="@string/continue_with_google" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                style="@style/btnDesign"
+                android:background="@drawable/btn_back"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_12sdp"
+               >
+            <ImageView
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_marginRight="@dimen/_2sdp"
+                android:src="@drawable/google"/>
+
+                <TextView
+                    android:id="@+id/txtappll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    style="@style/txtdesc"
+                    android:textSize="@dimen/_14ssp"
+                    android:textColor="@color/grey"
+                    android:text="@string/continue_with_apple" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/edTitle"
+                    android:layout_marginTop="0dp"
+                    android:textSize="@dimen/_12ssp"
+                    android:text="Don't have an account?" />
+
+                <TextView
+                    android:id="@+id/txtRegister"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/edTitle"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginLeft="@dimen/_4sdp"
+                    android:textSize="@dimen/_12ssp"
+                    android:text=" Sign Up" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>
