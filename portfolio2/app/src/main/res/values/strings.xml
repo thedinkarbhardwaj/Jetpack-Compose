@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">portfolio2</string>
+    <string name="name">Dinkar Bhardwaj</string>
+    <string name="prof">Android Developer</string>
+    <string name="desc">Skilled Android Developer with experience in building high-quality apps across various industries, including taxi booking, car parking, and product delivery. Proficient in Kotlin, Java, Firebase, and Jetpack, with a strong focus on user experience and scalable solutions. Over 1 crore (10 million) downloads on the Play Store.</string>
+</resources>
