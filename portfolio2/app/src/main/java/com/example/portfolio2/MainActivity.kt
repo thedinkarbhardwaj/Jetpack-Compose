@@ -34,6 +34,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             Portfolio2Theme {
                 Portfolio()
+
             }
         }
     }
@@ -100,4 +101,14 @@ fun CircleImageView() {
             .border(5.dp, Color.Red, CircleShape) // Border with circle shape
             .clip(CircleShape) // Clip the image to a circular shape
     )
+}
+
+@Composable
+fun ColumnLay() {
+    
+ Column() {
+     for (i in 1..20){
+         Text(text = "Welcome $i")
+     }
+ }   
 }
