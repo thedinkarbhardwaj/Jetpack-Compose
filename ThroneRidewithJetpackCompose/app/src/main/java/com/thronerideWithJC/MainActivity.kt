@@ -9,7 +9,9 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.thronerideWithJC.Screens.Splash
 import com.thronerideWithJC.ui.theme.ThroneRideWithJetpackComposeTheme
 
@@ -23,10 +25,29 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Splash()
+
+                    var navController = rememberNavController()
+                    NavHost(navController = navController, startDestination = "splash_screen"){
+                        composable("splash_screen") {
+                            Splash(navController)
+                        }
+
+                        composable("main_screen") {
+                            Homeact()
+                        }
+                    }
+
+
                 }
             }
+
+
         }
+    }
+
+    @Composable
+    fun Homeact() {
+        Text(text = "Home")
     }
 }
 
