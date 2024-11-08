@@ -142,6 +142,7 @@ fun TodoItem(item: Todo,onDelete: ()-> Unit) {
                    color = Color.Black)
            }
 
+
            IconButton(onClick = onDelete) {
                Icon(
                    imageVector = Icons.Default.Delete,
