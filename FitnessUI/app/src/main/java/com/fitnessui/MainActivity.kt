@@ -18,14 +18,14 @@ import com.fitnessui.ui.theme.FitnessUITheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+       // enableEdgeToEdge()
         setContent {
             FitnessUITheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
 
                     var navController = rememberNavController()
 
-                    NavHost(navController = navController, startDestination = Route.Splash,
+                    NavHost(navController = navController, startDestination = Route.OnBoarding,
                         builder = {
 
                             composable(route = Route.Splash){

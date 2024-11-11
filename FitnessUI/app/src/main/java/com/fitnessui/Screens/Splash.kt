@@ -82,7 +82,9 @@ fun Splash(navHostController: NavHostController) {
         Constanst.CustomButton(stringResource(R.string.get_started),
             onClick = {
 
-                navHostController.navigate(Route.OnBoarding)
+                navHostController.navigate(Route.OnBoarding){
+                    popUpTo(Route.Splash) { inclusive = true }
+                }
                 // Your action here
                 println("Button clicked!")
                 Log.d("Checkedddd","Button clicked!")
