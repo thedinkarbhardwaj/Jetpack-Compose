@@ -4,4 +4,5 @@ object Route {
 
     val Splash = "splash"
     val OnBoarding = "onboarding"
+    val Register = "register"
 }
