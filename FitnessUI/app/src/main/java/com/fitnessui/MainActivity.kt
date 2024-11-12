@@ -11,6 +11,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.fitnessui.Navigation.Route
 import com.fitnessui.Screens.OnBoarding
+import com.fitnessui.Screens.RegCompleteProf
 import com.fitnessui.Screens.Register
 import com.fitnessui.Screens.Splash
 import com.fitnessui.ui.theme.FitnessUITheme
@@ -25,7 +26,7 @@ class MainActivity : ComponentActivity() {
 
                     var navController = rememberNavController()
 
-                    NavHost(navController = navController, startDestination = Route.OnBoarding,
+                    NavHost(navController = navController, startDestination = Route.Register,
                         builder = {
 
                             composable(route = Route.Splash){
@@ -37,7 +38,11 @@ class MainActivity : ComponentActivity() {
                             }
 
                             composable(route = Route.Register){
-                                Register()
+                                Register(navController)
+                            }
+
+                            composable(route = Route.RegCompleteProf){
+                                RegCompleteProf(navController)
                             }
                         })
 

@@ -30,7 +30,7 @@ object Constanst {
             onClick =  onClick,
             modifier = Modifier
                 .fillMaxWidth()
-                .height(60.dp)
+                .height(50.dp)
                 .padding(horizontal = 20.dp)
                 .background(
                     brush = Brush.horizontalGradient(

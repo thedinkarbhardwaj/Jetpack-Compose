@@ -20,6 +20,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
@@ -57,7 +58,7 @@ fun OnBoarding(navController: NavHostController,modifier: Modifier = Modifier) {
                 if(list.size > listPos) {
                     OnBoardingUpperDesign(list.get(listPos))
                 }else{
-                    navController.navigate(Route.Register)
+
                 }
             }
 
@@ -69,7 +70,13 @@ fun OnBoarding(navController: NavHostController,modifier: Modifier = Modifier) {
                     .clip(shape = CircleShape)
                     .background(brush = Brush.linearGradient(listOf(AppColor.Blue,AppColor.LightPink)))
                     .clickable {
-                        listPos++
+                        if (listPos < list.size - 1) {
+                            listPos++
+                        } else {
+
+                         navController.navigate(Route.Register)
+
+                        }
                     },
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.Center
