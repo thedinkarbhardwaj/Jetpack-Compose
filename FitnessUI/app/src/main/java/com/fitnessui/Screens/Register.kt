@@ -1,15 +1,18 @@
 package com.fitnessui.Screens
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.util.Log
+import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -26,6 +29,7 @@ import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Phone
+import androidx.compose.material.icons.rounded.Notifications
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Checkbox
@@ -37,6 +41,7 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -51,6 +56,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
@@ -65,26 +71,32 @@ import com.fitnessui.Navigation.Route
 import com.fitnessui.R
 import com.fitnessui.ui.theme.AppColor
 import com.fitnessui.ui.theme.AppFont
+import com.tapadoo.alerter.Alerter
+import com.tapadoo.alerter.iconPulse
+
+
+class RegisterState {
+    companion object {
+        var fullName by mutableStateOf("")
+        var phoneNO by mutableStateOf("")
+        var email by mutableStateOf("")
+        var password by mutableStateOf("")
+        var alertMsg by mutableStateOf("")
+        var isChecked by mutableStateOf(false)
+
+        var context:Context? = null
+    }
+}
+
 
 @Composable
 fun Register(navController: NavHostController,modifier: Modifier = Modifier) {
 
-    var fullName by remember {
-        mutableStateOf("")
-    }
+    var showError by remember { mutableStateOf(false) }
 
-    var phoneNO by remember {
-        mutableStateOf("")
-    }
+    val context = LocalContext.current
 
-    var email by remember {
-        mutableStateOf("")
-    }
-
-    var password by remember {
-        mutableStateOf("")
-    }
-
+    RegisterState.context = context
     Column(modifier = modifier.fillMaxSize()
         .verticalScroll(state = rememberScrollState())
         .padding(vertical = 20.dp, horizontal = 10.dp),
@@ -98,8 +110,8 @@ Spacer(modifier = Modifier.height(6.dp))
         Spacer(modifier = Modifier.height(20.dp))
         CustomTextField("Full Name", Icons.Default.Person,KeyboardType.Text,
             ImeAction.Next,
-            fullName) { newValue ->
-            fullName = newValue
+            RegisterState.fullName) { newValue ->
+            RegisterState.fullName = newValue
         }
 
         // Phone no
@@ -108,9 +120,9 @@ Spacer(modifier = Modifier.height(6.dp))
             Icons.Default.Phone,
             KeyboardType.Phone,
             ImeAction.Next,
-            phoneNO
+            RegisterState.phoneNO
         ) { newValue ->
-            phoneNO = newValue
+            RegisterState.phoneNO = newValue
         }
 
         // Emaill
@@ -119,9 +131,9 @@ Spacer(modifier = Modifier.height(6.dp))
             Icons.Default.Email,
             KeyboardType.Email,
             ImeAction.Next,
-            email
+            RegisterState.email
         ) { newValue ->
-            email = newValue
+            RegisterState.email = newValue
         }
 
         // Password field
@@ -130,9 +142,9 @@ Spacer(modifier = Modifier.height(6.dp))
             Icons.Default.Lock,
             KeyboardType.Password,
             ImeAction.Next,
-            password
+            RegisterState.password
         ) { newValue ->
-            password = newValue
+            RegisterState.password = newValue
         }
 
         Spacer(modifier = Modifier.height(10.dp))
@@ -140,9 +152,11 @@ Spacer(modifier = Modifier.height(6.dp))
         Row(modifier = Modifier.padding(vertical = 1.dp, horizontal = 14.dp),
             ) {
 
-            Checkbox(checked = false,
-                onCheckedChange = {
 
+            Checkbox( checked = RegisterState.isChecked,
+                onCheckedChange = { checked ->
+                    // Update the state when the Checkbox is checked/unchecked
+                    RegisterState.isChecked = checked
                 },
                 colors =  CheckboxDefaults.colors(
                     checkedColor = AppColor.Purple , // This changes the color of the checkmark and box when checked
@@ -158,9 +172,27 @@ Spacer(modifier = Modifier.height(6.dp))
         Spacer(modifier = Modifier.height(40.dp))
 
         Constanst.CustomButton("Register") {
-            navController.navigate(Route.RegCompleteProf) {
-               // popUpTo(Route.OnBoarding) { inclusive = true }
+
+           // showError = false
+            if (validations()){
+                navController.navigate(Route.RegCompleteProf) {
+                    popUpTo(navController.graph.startDestinationId) {
+                        inclusive = true
+                    }
+                }
+
             }
+            else{
+                Toast.makeText(context,"Reg Button",Toast.LENGTH_SHORT).show()
+
+                showError = true
+            }
+
+        }
+
+        if (showError) {
+            AlerterMsg(RegisterState.alertMsg,"") // Your composable to show error message
+           showError = false
         }
 
         Spacer(modifier = Modifier.height(20.dp))
@@ -290,6 +322,7 @@ fun CardOfSocial(image: Int) {
 
 @Composable
 fun ClickableTextExample() {
+
     val context = LocalContext.current
 
     val annotatedText = buildAnnotatedString {
@@ -353,4 +386,91 @@ fun ClickableTextExample() {
             }
         }
     )
+}
+
+
+
+fun validations():Boolean{
+
+    var valid = false
+    if (RegisterState.fullName.isBlank()){
+
+     RegisterState.alertMsg = "Please enter your full name"
+
+        return valid
+    }
+    else if (RegisterState.phoneNO.isBlank()){
+        RegisterState.alertMsg = "Please enter your phone number"
+
+        return valid
+    }
+
+    else if (RegisterState.phoneNO.length <10){
+        RegisterState.alertMsg = "Please enter atleast 10 digits"
+
+        return valid
+    }
+    else if (RegisterState.email.isBlank()){
+
+        RegisterState.alertMsg = "Please enter your email"
+
+        return valid
+    }
+
+    else if (!RegisterState.email.contains("@")){
+
+        RegisterState.alertMsg = "Please enter your correct email"
+
+        return valid
+    }
+
+    else if (!RegisterState.password.isBlank()){
+
+        RegisterState.alertMsg = "Please enter password"
+
+        return valid
+    }
+
+    else if (RegisterState.password.length <6){
+
+        RegisterState.alertMsg = "Please enter atleast 6 password"
+
+        return valid
+    }
+
+    return true
+}
+
+@Composable
+fun AlerterMsg(title: String, desc: String) {
+
+    Log.d("CheckkkAlertMsg","CheckkkAlertMsg")
+    var showAlert by remember { mutableStateOf(false) }
+
+     Alerter(isShown = true, onChanged = { showAlert = true },
+         backgroundColor = AppColor.Red,
+         enableVibration = true,
+         disableOutsideTouch = true
+     ) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .fillMaxHeight(),
+                horizontalArrangement = Arrangement.Start,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Icon(
+                    imageVector = Icons.Rounded.Notifications,
+                    contentDescription = "",
+                    tint = Color.White,
+                    modifier = Modifier.padding(start = 12.dp).iconPulse()
+                )
+
+                Column(modifier = Modifier.padding(horizontal = 12.dp)) {
+                    Text(text = "$title", color = Color.White, fontWeight = FontWeight.SemiBold, fontSize = 14.sp)
+                  //  Text(text = "$desc", color = Color.White, fontSize = 14.sp)
+                }
+            }
+        }
+
 }

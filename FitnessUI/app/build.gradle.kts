@@ -47,7 +47,10 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+
 }
+
+
 
 dependencies {
 
@@ -70,4 +73,9 @@ dependencies {
     val nav_version = "2.8.3"
 
     implementation("androidx.navigation:navigation-compose:$nav_version")
+
+    implementation ("com.github.akardas16:Alerter:1.0.6")
+
+
+
 }
