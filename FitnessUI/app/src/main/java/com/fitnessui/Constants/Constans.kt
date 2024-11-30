@@ -16,6 +16,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontStyle
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.fitnessui.R
@@ -25,9 +28,9 @@ import com.fitnessui.ui.theme.AppFont
 object Constanst {
 
     @Composable
-    fun CustomButton(text: String,onClick: () -> Unit) {
+    fun CustomButton(text: String, onClick: () -> Unit) {
         Button(
-            onClick =  onClick,
+            onClick = onClick,
             modifier = Modifier
                 .fillMaxWidth()
                 .height(50.dp)
@@ -46,7 +49,7 @@ object Constanst {
             ),
             shape = RoundedCornerShape(30.dp), // Apply rounded corners to the Button itself
             border = BorderStroke(width = 1.dp, color = AppColor.black)
-            ) {
+        ) {
             Text(
                 text = text,
                 fontSize = 16.sp,
@@ -54,4 +57,37 @@ object Constanst {
             )
         }
     }
+
+    @Composable
+    fun HeadingText(text: String, textAlign: TextAlign = TextAlign.Center, onClick: () -> Unit) {
+
+        Text(
+            text = text, style = TextStyle(
+                fontSize = 20.sp,
+                fontFamily = AppFont.poppinsBold,
+                textAlign = textAlign
+            ),
+            modifier = Modifier.fillMaxWidth()
+        )
+    }
+
+    @Composable
+    fun DescText(text: String, textAlign: TextAlign = TextAlign.Center, onClick: () -> Unit) {
+
+        Text(
+            text = text, style = TextStyle(
+                fontSize = 12.sp,
+                color = AppColor.Gray,
+                fontFamily = AppFont.poppinsRegular,
+                textAlign = textAlign
+            ),
+            modifier = Modifier.fillMaxWidth()
+                .padding(top = 10.dp)
+        )
+    }
+
+
+
+
+
 }

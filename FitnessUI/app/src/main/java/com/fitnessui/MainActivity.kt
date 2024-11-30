@@ -33,7 +33,7 @@ class MainActivity : ComponentActivity() {
 
                     var navController = rememberNavController()
 
-                    NavHost(navController = navController, startDestination = Route.Register,
+                    NavHost(navController = navController, startDestination = Route.RegCompleteProf,
                         builder = {
 
                             composable(route = Route.Splash){

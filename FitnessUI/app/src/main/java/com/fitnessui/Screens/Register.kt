@@ -53,6 +53,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
@@ -92,12 +93,17 @@ class RegisterState {
 @Composable
 fun Register(navController: NavHostController,modifier: Modifier = Modifier) {
 
+    val keyboardController = LocalSoftwareKeyboardController.current
+
     var showError by remember { mutableStateOf(false) }
 
     val context = LocalContext.current
 
     RegisterState.context = context
     Column(modifier = modifier.fillMaxSize()
+        .clickable {
+            keyboardController?.hide()
+        }
         .verticalScroll(state = rememberScrollState())
         .padding(vertical = 20.dp, horizontal = 10.dp),
         horizontalAlignment = Alignment.CenterHorizontally,) {
@@ -390,6 +396,7 @@ fun ClickableTextExample() {
 
 
 
+@SuppressLint("SuspiciousIndentation")
 fun validations():Boolean{
 
     var valid = false
@@ -406,7 +413,7 @@ fun validations():Boolean{
     }
 
     else if (RegisterState.phoneNO.length <10){
-        RegisterState.alertMsg = "Please enter atleast 10 digits"
+        RegisterState.alertMsg = "Please enter atleast 10 digits phone number"
 
         return valid
     }
@@ -424,7 +431,7 @@ fun validations():Boolean{
         return valid
     }
 
-    else if (!RegisterState.password.isBlank()){
+    else if (RegisterState.password.isBlank()){
 
         RegisterState.alertMsg = "Please enter password"
 
