@@ -1,6 +1,5 @@
 package com.sunpawtechnologies.supawui.screens
 
-import android.widget.Space
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -35,7 +34,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
@@ -43,11 +41,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.sunpawtechnologies.supawui.R
-import com.sunpawtechnologies.supawui.naviagtion.NavigationName.otp
+import com.sunpawtechnologies.supawui.naviagtion.NavigationName
 import com.sunpawtechnologies.supawui.ui.theme.Primary
 
 @Composable
-fun OtpScreen(navController: NavHostController) {
+fun OtpScreen(navController: NavHostController, phoneNumber: String) {
 
     var otp by rememberSaveable {
         mutableStateOf("")
@@ -78,7 +76,7 @@ fun OtpScreen(navController: NavHostController) {
                 letterSpacing = 2.sp, fontSize = 20.sp))
             Spacer(modifier = Modifier.height(8.dp))
             Text(
-                "We just sent an otp verification code to this +91-9876543210",
+                "We just sent an otp verification code to this +91-${phoneNumber}",
                 style = TextStyle(
                     color = Color.Gray,
                     fontSize = 16.sp,
@@ -97,7 +95,9 @@ fun OtpScreen(navController: NavHostController) {
             )
             Spacer(modifier = Modifier.height(20.dp))
 
-            ElevatedButton(onClick = {}, modifier = Modifier.fillMaxWidth().height(50.dp),
+            ElevatedButton(onClick = {
+                navController.navigate(NavigationName.home)
+            }, modifier = Modifier.fillMaxWidth().height(50.dp),
                 colors = ButtonDefaults.buttonColors(
                     contentColor = Color.White,
                     containerColor = Primary

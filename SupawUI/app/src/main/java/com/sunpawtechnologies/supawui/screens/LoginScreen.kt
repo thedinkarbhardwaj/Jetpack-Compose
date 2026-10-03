@@ -83,7 +83,11 @@ fun LoginScreen(navController: NavHostController) {
             Column(modifier = Modifier.fillMaxWidth().padding(20.dp)) {
 
                 // Close icon removed, since the sheet can't be closed anymore
+
+                Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
                 Text("Login")
+                Icon(Icons.Default.Close,"")
+                }
 
                 Spacer(modifier = Modifier.padding(top = 10.dp))
                 Text("Enter your mobile number to proceed",
@@ -106,7 +110,7 @@ fun LoginScreen(navController: NavHostController) {
                 ElevatedButton(
                     onClick = {
 
-                        navController.navigate(NavigationName.otp)
+                        navController.navigate("${NavigationName.otp}/$mobileNum")
                     },
                     modifier = Modifier.fillMaxWidth().height(50.dp),
                     shape = RoundedCornerShape(10.dp),
