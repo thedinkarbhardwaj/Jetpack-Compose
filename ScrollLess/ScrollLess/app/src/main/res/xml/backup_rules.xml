@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+   Backup rules for Android 11 (API 30) and lower. Android 12+ uses data_extraction_rules.xml.
+   Usage history and settings stay on the device: they're excluded from backups.
+   See https://developer.android.com/guide/topics/data/autobackup
+-->
+<full-backup-content>
+    <exclude domain="database" path="scrollless.db" />
+    <exclude domain="database" path="scrollless.db-wal" />
+    <exclude domain="database" path="scrollless.db-shm" />
+    <exclude domain="file" path="datastore/" />
+</full-backup-content>

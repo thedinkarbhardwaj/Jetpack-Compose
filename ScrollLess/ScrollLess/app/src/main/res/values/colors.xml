@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <!-- Must match LightColorScheme.background in ui/theme/Color.kt. -->
+    <color name="window_background">#FFF4FBFA</color>
+    <color name="splash_icon_background">#FF0F6F6B</color>
+
+    <!-- Instagram counter overlay. Always dark so it reads over bright and dark video alike. -->
+    <color name="overlay_background">#EB141B1B</color>
+    <color name="overlay_text">#FFFFFFFF</color>
+    <color name="overlay_accent">#FF80D5D4</color>
+    <color name="overlay_warning">#FFFAB219</color>
+    <color name="overlay_critical">#FFF06A6A</color>
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ScrollLess mark: a screen-time ring three-quarters full, an amber "limit" marker where it
+  ends, and a pause symbol in the middle: "pause the scroll". Everything stays inside the
+  66dp adaptive-icon safe zone (outer radius 25 around the 54,54 centre).
+  Also used as the splash-screen icon.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Ring track -->
+    <path
+        android:pathData="M32,54 A22,22 0 1,1 76,54 A22,22 0 1,1 32,54"
+        android:strokeWidth="5"
+        android:strokeColor="#47FFFFFF" />
+    <!-- Progress: clockwise from the top, 270 degrees -->
+    <path
+        android:pathData="M54,32 A22,22 0 1,1 32,54"
+        android:strokeLineCap="round"
+        android:strokeWidth="6"
+        android:strokeColor="#FFFFFFFF" />
+    <!-- Limit marker -->
+    <path
+        android:fillColor="#FFFFC94D"
+        android:pathData="M26.5,54 a5.5,5.5 0 1,0 11,0 a5.5,5.5 0 1,0 -11,0" />
+    <!-- Pause -->
+    <path
+        android:pathData="M49,47.5 L49,60.5 M59,47.5 L59,60.5"
+        android:strokeLineCap="round"
+        android:strokeWidth="5.5"
+        android:strokeColor="#FFFFFFFF" />
+</vector>

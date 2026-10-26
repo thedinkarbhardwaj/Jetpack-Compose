@@ -1,0 +1,317 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "7d7a8df06d45308b999ab99443f1f1f6",
+    "entities": [
+      {
+        "tableName": "content_view_event",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `kind` TEXT NOT NULL, `occurred_at_utc_ms` INTEGER NOT NULL, `zone_id` TEXT NOT NULL, `local_epoch_day` INTEGER NOT NULL, `local_hour` INTEGER NOT NULL, `dedup_key` TEXT NOT NULL, `detector_version` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "kind",
+            "columnName": "kind",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "occurredAtUtcMs",
+            "columnName": "occurred_at_utc_ms",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "zoneId",
+            "columnName": "zone_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "localEpochDay",
+            "columnName": "local_epoch_day",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "localHour",
+            "columnName": "local_hour",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dedupKey",
+            "columnName": "dedup_key",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "detectorVersion",
+            "columnName": "detector_version",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_content_view_event_dedup_key",
+            "unique": true,
+            "columnNames": [
+              "dedup_key"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_content_view_event_dedup_key` ON `${TABLE_NAME}` (`dedup_key`)"
+          },
+          {
+            "name": "index_content_view_event_kind_local_epoch_day",
+            "unique": false,
+            "columnNames": [
+              "kind",
+              "local_epoch_day"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_content_view_event_kind_local_epoch_day` ON `${TABLE_NAME}` (`kind`, `local_epoch_day`)"
+          }
+        ]
+      },
+      {
+        "tableName": "usage_session",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `platform` TEXT NOT NULL, `mode` TEXT NOT NULL, `source` TEXT NOT NULL, `start_utc_ms` INTEGER NOT NULL, `end_utc_ms` INTEGER NOT NULL, `zone_id` TEXT NOT NULL, `local_epoch_day` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "platform",
+            "columnName": "platform",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mode",
+            "columnName": "mode",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "source",
+            "columnName": "source",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "startUtcMs",
+            "columnName": "start_utc_ms",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "endUtcMs",
+            "columnName": "end_utc_ms",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "zoneId",
+            "columnName": "zone_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "localEpochDay",
+            "columnName": "local_epoch_day",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_usage_session_source_platform_mode_start_utc_ms",
+            "unique": true,
+            "columnNames": [
+              "source",
+              "platform",
+              "mode",
+              "start_utc_ms"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_usage_session_source_platform_mode_start_utc_ms` ON `${TABLE_NAME}` (`source`, `platform`, `mode`, `start_utc_ms`)"
+          },
+          {
+            "name": "index_usage_session_platform_mode_local_epoch_day",
+            "unique": false,
+            "columnNames": [
+              "platform",
+              "mode",
+              "local_epoch_day"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_usage_session_platform_mode_local_epoch_day` ON `${TABLE_NAME}` (`platform`, `mode`, `local_epoch_day`)"
+          }
+        ]
+      },
+      {
+        "tableName": "tracking_coverage",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `source` TEXT NOT NULL, `start_utc_ms` INTEGER NOT NULL, `end_utc_ms` INTEGER, `end_reason` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "source",
+            "columnName": "source",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "startUtcMs",
+            "columnName": "start_utc_ms",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "endUtcMs",
+            "columnName": "end_utc_ms",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "endReason",
+            "columnName": "end_reason",
+            "affinity": "TEXT"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_tracking_coverage_source_start_utc_ms",
+            "unique": false,
+            "columnNames": [
+              "source",
+              "start_utc_ms"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_tracking_coverage_source_start_utc_ms` ON `${TABLE_NAME}` (`source`, `start_utc_ms`)"
+          }
+        ]
+      },
+      {
+        "tableName": "limit_history",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `metric` TEXT NOT NULL, `limit_value` INTEGER NOT NULL, `effective_from_epoch_day` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "metric",
+            "columnName": "metric",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "limitValue",
+            "columnName": "limit_value",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "effectiveFromEpochDay",
+            "columnName": "effective_from_epoch_day",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_limit_history_metric_effective_from_epoch_day",
+            "unique": true,
+            "columnNames": [
+              "metric",
+              "effective_from_epoch_day"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_limit_history_metric_effective_from_epoch_day` ON `${TABLE_NAME}` (`metric`, `effective_from_epoch_day`)"
+          }
+        ]
+      },
+      {
+        "tableName": "warning_fired",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`local_epoch_day` INTEGER NOT NULL, `metric` TEXT NOT NULL, `threshold_percent` INTEGER NOT NULL, `fired_at_utc_ms` INTEGER NOT NULL, PRIMARY KEY(`local_epoch_day`, `metric`, `threshold_percent`))",
+        "fields": [
+          {
+            "fieldPath": "localEpochDay",
+            "columnName": "local_epoch_day",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "metric",
+            "columnName": "metric",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "thresholdPercent",
+            "columnName": "threshold_percent",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "firedAtUtcMs",
+            "columnName": "fired_at_utc_ms",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "local_epoch_day",
+            "metric",
+            "threshold_percent"
+          ]
+        }
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '7d7a8df06d45308b999ab99443f1f1f6')"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Narrowest configuration that supports Reels estimates:
+  - packageNames: Instagram only. Other apps are never observed by default.
+  - Window-change and scroll events only. No text-change, focus or click events.
+  - flagReportViewIds exposes layout resource IDs, used to recognise Instagram's Reels viewer.
+  - canRetrieveWindowContent lets the service read the scrolled view's ID. It never reads
+    on-screen text.
+  - Only if the user turns on the optional Instagram counter does the service widen its scope at
+    runtime to window changes (package name only) from all apps, so the counter can hide outside
+    Instagram (ScrollLessAccessibilityService.applyEventScope). It narrows again when the counter
+    is turned off.
+  - The counter is a TYPE_ACCESSIBILITY_OVERLAY window, so no "display over other apps"
+    permission is needed.
+  - isAccessibilityTool is false (ignored before API 31): this isn't a disability-support tool,
+    so the in-app prominent disclosure is shown before the user is sent to settings.
+-->
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:accessibilityEventTypes="typeWindowStateChanged|typeViewScrolled"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:accessibilityFlags="flagReportViewIds"
+    android:canRetrieveWindowContent="true"
+    android:description="@string/accessibility_service_description"
+    android:isAccessibilityTool="false"
+    android:notificationTimeout="100"
+    android:packageNames="com.instagram.android"
+    tools:ignore="UnusedAttribute" />

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ClaudeCodeEditorTabs">
+    <option name="activeSessionId" value="b72226f1-6be1-44cd-b4ad-d83ba9cd2751" />
+    <option name="openSessionIds">
+      <list>
+        <option value="1ab3dd32-a7bd-4b66-ae62-b0527a9a4521" />
+        <option value="f3fd91e4-4873-4488-b78f-efbc9618bb75" />
+        <option value="c64e2fd5-37f1-4edb-866a-762c7f82ed90" />
+        <option value="b72226f1-6be1-44cd-b4ad-d83ba9cd2751" />
+      </list>
+    </option>
+    <option name="sessionPaths">
+      <map>
+        <entry key="1ab3dd32-a7bd-4b66-ae62-b0527a9a4521" value="/sessions/3f555b6d-ef6e-4caa-8343-a3612c0bae92" />
+        <entry key="b72226f1-6be1-44cd-b4ad-d83ba9cd2751" value="/sessions/bae5472b-fca8-4a2e-832a-2a57d11371d8" />
+        <entry key="c64e2fd5-37f1-4edb-866a-762c7f82ed90" value="/sessions/new" />
+        <entry key="f3fd91e4-4873-4488-b78f-efbc9618bb75" value="/sessions/b2ea24ea-c8da-4b55-a48d-4659e98d6adc" />
+      </map>
+    </option>
+    <option name="sessionTitles">
+      <map>
+        <entry key="1ab3dd32-a7bd-4b66-ae62-b0527a9a4521" value="# Claude Code Master Prompt — ScrollSathi Android" />
+        <entry key="b72226f1-6be1-44cd-b4ad-d83ba9cd2751" value="ScrollLess rebuild and Brainpal analysis" />
+        <entry key="c64e2fd5-37f1-4edb-866a-762c7f82ed90" value="Claude Code" />
+        <entry key="f3fd91e4-4873-4488-b78f-efbc9618bb75" value="# Fix Android Studio ADB Wi-Fi Pairing Initializat" />
+      </map>
+    </option>
+  </component>
+</project>

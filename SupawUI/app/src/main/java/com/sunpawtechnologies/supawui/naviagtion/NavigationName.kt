@@ -8,5 +8,6 @@ object NavigationName {
     final val otp = "OtpScreen"
     final val home = "HomeScreen"
     final val addProduct = "AddProductScreen"
+    final val addOption = "AddOptionScreen"
 
 }

@@ -47,5 +47,8 @@ fun AppNavigation() {
             AddProductScreen(navController,productName)
         }
 
+        composable(NavigationName.addOption) {
+            HomeScreen(navController)
+        }
     }
 }

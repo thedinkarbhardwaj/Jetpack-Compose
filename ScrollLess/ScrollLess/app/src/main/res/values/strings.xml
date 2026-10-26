@@ -1,0 +1,316 @@
+<resources>
+    <string name="app_name">ScrollLess</string>
+    <string name="tagline">Scroll less. Live more.</string>
+    <string name="navigate_back">Navigate back</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_analytics">Analytics</string>
+    <string name="nav_limits">Limits</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_welcome_title">Welcome to ScrollLess</string>
+    <string name="onboarding_welcome_body">ScrollLess shows how long Instagram and YouTube are open each day, and reminds you near the limits you choose. It never blocks other apps, and everything it records stays on your phone.</string>
+    <string name="onboarding_get_started">Get started</string>
+    <string name="onboarding_feature_count">Optional: an estimated count of the Reels you swipe to</string>
+    <string name="onboarding_feature_limits">Daily time limits for Instagram and YouTube, with a gentle reminder before and at the limit</string>
+    <string name="onboarding_feature_privacy">Private by design: no account, no internet, nothing leaves your phone</string>
+    <string name="onboarding_step_of">Step %1$d of %2$d</string>
+    <string name="onboarding_limit_title">How much Instagram time feels right each day?</string>
+    <string name="onboarding_limit_body">This counts all the time Instagram is open, not only Reels. You can change it, or add a YouTube limit, any time.</string>
+    <string name="onboarding_limit_value">%1$d min</string>
+    <string name="onboarding_limit_value_caption">a day on Instagram</string>
+    <string name="onboarding_limit_footnote">Next, you\'ll choose what ScrollLess may measure. Nothing is measured until you allow it.</string>
+    <string name="onboarding_limit_continue">Set this limit</string>
+    <string name="onboarding_limit_skip">Decide later</string>
+
+    <!-- Dashboard -->
+    <string name="greeting_morning">Good morning</string>
+    <string name="greeting_afternoon">Good afternoon</string>
+    <string name="greeting_evening">Good evening</string>
+    <string name="wellbeing_approaching">You\'re close to one of today\'s limits. A short break helps.</string>
+    <string name="wellbeing_reached">You\'ve reached a daily limit. Time for something offline?</string>
+    <string name="overview_not_configured_title">Set up tracking to see your usage</string>
+    <string name="overview_not_configured_body">ScrollLess needs your permission before it can measure anything. It takes about a minute.</string>
+    <string name="dashboard_instagram_missing_title">Instagram isn\'t installed</string>
+    <string name="dashboard_instagram_missing_body">ScrollLess currently tracks the Instagram app (com.instagram.android). Install it, or check back when more apps are supported.</string>
+    <string name="action_set_up_tracking">Set up tracking</string>
+    <string name="action_fix_tracking">Fix tracking</string>
+    <string name="action_view_analytics">View analytics</string>
+    <string name="action_manage_permissions">Manage permissions</string>
+    <string name="action_adjust_limits">Adjust limits</string>
+
+    <string name="metric_reels_title">Instagram Reels today</string>
+    <string name="metric_instagram_time_title">Instagram open time today</string>
+    <string name="status_tracking_active">Tracking active</string>
+    <string name="status_not_configured">Not configured</string>
+    <string name="status_tracking_unavailable">Tracking unavailable</string>
+    <string name="status_not_tracked">Not tracked</string>
+    <string name="metric_loading">Loading…</string>
+    <string name="metric_of_limit">of %1$d</string>
+    <string name="metric_reels_left">%1$d left today</string>
+    <string name="metric_reels_over">%1$d over today\'s limit</string>
+    <string name="metric_percent_of_limit">%1$d%% of your daily limit</string>
+    <string name="metric_no_limit">No daily limit set. Turn one on in Limits.</string>
+    <string name="metric_of_minutes">of %1$d min</string>
+    <string name="metric_minutes_left">%1$d min left today</string>
+    <string name="metric_minutes_over">%1$d min over today\'s limit</string>
+    <string name="reels_optional_body">Optional: an estimated count of the Reels you swipe to. It uses Accessibility, which some payment apps don\'t allow while it\'s on. Time limits above work without it.</string>
+    <string name="reels_optional_action">Learn more and set up</string>
+    <string name="payment_hint_title">Payment app not opening?</string>
+    <string name="payment_hint_body">Some banking and payment apps refuse to open while any Accessibility service from another app is on, including ScrollLess Reels tracking. Turn it off here; time limits keep working.</string>
+    <string name="notice_time_reached_title">You\'ve reached today\'s %1$s limit</string>
+    <string name="notice_time_close_title">You\'re close to today\'s %1$s limit</string>
+    <string name="notice_reels_reached_title">You\'ve reached today\'s Reels limit</string>
+    <string name="notice_reels_close_title">You\'re close to today\'s Reels limit</string>
+    <string name="notice_time_body">%1$s has been open for %2$s today. Your limit is %3$d min. This is all of %1$s, not only Reels or Shorts.</string>
+    <string name="notice_reels_body">About %1$d Reels today. Your limit is %2$d. This is an estimate.</string>
+    <string name="notice_take_break">Take a break</string>
+    <string name="notice_change_limit">Change limit</string>
+    <string name="notice_dismiss">Dismiss for today</string>
+    <string name="metric_reels_estimate_short">≈ Estimate: counts each new Reel you swipe to, not whether you watched it to the end.</string>
+    <string name="metric_instagram_time_note">All of Instagram on screen: feed, Stories, messages and Reels. Not Reels-only time.</string>
+    <string name="metric_needs_usage_access">Turn on Usage Access to measure Instagram time.</string>
+    <string name="metric_needs_accessibility">Basic tracking measures app time only. Reel counts need Advanced Reels tracking.</string>
+    <string name="metric_needs_consent">Review and accept the updated Reels tracking disclosure.</string>
+    <string name="metric_service_not_running">Reels tracking is on, but Android has stopped it.</string>
+    <string name="metric_instagram_not_installed">Instagram isn\'t installed.</string>
+    <string name="duration_hours_minutes">%1$d h %2$d min</string>
+    <string name="duration_minutes">%1$d min</string>
+    <string name="duration_under_minute">&lt; 1 min</string>
+
+    <string name="dashboard_insights">Insights</string>
+    <string name="insight_tracked_today">Instagram time tracked today</string>
+    <string name="insight_yesterday">Yesterday</string>
+    <string name="insight_reels_yesterday">Reels</string>
+    <string name="insight_time_yesterday">Instagram time</string>
+    <string name="insight_no_yesterday">A comparison with yesterday appears once a full day has been tracked.</string>
+    <string name="limits_cta_title">Daily limits</string>
+    <string name="limits_cta_body">Set daily limits for Instagram and YouTube time, and optionally Reels. Reminders and the dashboard use them.</string>
+
+    <string name="limit_status_within">On track</string>
+    <string name="limit_status_approaching">Near limit</string>
+    <string name="limit_status_reached">Limit reached</string>
+
+    <!-- Tracking modes and status -->
+    <string name="mode_basic_active">Basic tracking active · app time</string>
+    <string name="mode_advanced_active">Advanced tracking active · app time and Reels</string>
+    <string name="mode_reels_only">Reels tracking active · app time off</string>
+    <string name="mode_none">Tracking not set up yet</string>
+    <string name="issue_stopped_title">Reels tracking was stopped by your phone</string>
+    <string name="issue_stopped_body">It\'s still switched on, but Android or the phone\'s battery manager stopped it. App time is still measured.</string>
+    <string name="issue_turned_off_title">Reels tracking is switched off</string>
+    <string name="issue_turned_off_body">This often happens after an app update, or if it was turned off in Accessibility settings. App time is still measured.</string>
+    <string name="issue_needs_consent_title">Reels tracking needs your agreement</string>
+    <string name="issue_needs_consent_body">The tracking disclosure changed. Nothing is counted until you review and accept it.</string>
+    <string name="action_turn_back_on">Turn back on</string>
+    <string name="action_use_basic_only">Use Basic only</string>
+    <string name="metric_youtube_time_title">YouTube open time today</string>
+    <string name="metric_youtube_time_note">On screen, Shorts and videos together. Shorts counts aren\'t available.</string>
+    <string name="metric_youtube_not_installed">YouTube isn\'t installed.</string>
+
+    <!-- Setup: the two tracking modes -->
+    <string name="setup_section_basic">Basic tracking</string>
+    <string name="setup_section_basic_body">How long Instagram and YouTube are on screen. Needs only Usage Access. Reel and Short counts aren\'t available in this mode.</string>
+    <string name="setup_section_advanced">Advanced Reels tracking · optional</string>
+    <string name="setup_section_advanced_body">Adds an estimated Reels count, and an optional counter inside Instagram. Needs Accessibility access. You can add it any time.</string>
+    <string name="setup_show_advanced">Set up Advanced Reels tracking</string>
+    <string name="battery_title">Keep Reels tracking running</string>
+    <string name="battery_body">Some phones stop background apps to save battery, which pauses Reels tracking until you open ScrollLess again.</string>
+    <plurals name="battery_interruptions">
+        <item quantity="one">Your phone stopped Reels tracking %d time in the last 7 days, usually to save battery.</item>
+        <item quantity="other">Your phone stopped Reels tracking %d times in the last 7 days, usually to save battery.</item>
+    </plurals>
+    <string name="battery_unrestricted">Battery: unrestricted</string>
+    <string name="battery_optimized">Battery: optimized. Android may stop tracking.</string>
+    <string name="battery_open_settings">Open battery settings</string>
+    <string name="battery_open_guide">Steps for your phone brand (dontkillmyapp.com)</string>
+    <string name="battery_disclaimer">These settings make stops less likely, but no setting guarantees Android won\'t stop an app.</string>
+    <string name="settings_open_failed_battery">Couldn\'t open battery settings. Open Settings › Apps › ScrollLess › Battery.</string>
+    <string name="settings_open_failed_browser">No browser available. Visit %1$s</string>
+
+    <!-- Screen titles -->
+    <string name="limits_title">Limits &amp; warnings</string>
+    <string name="analytics_title">Analytics</string>
+    <string name="permissions_title">Set up tracking</string>
+    <string name="settings_title">Settings</string>
+
+    <!-- Limits -->
+    <string name="limits_intro">Changes apply from today. Past days keep the limit they had, so your history stays accurate. Nothing is blocked when you reach a limit: you get a reminder and can decide.</string>
+    <string name="limit_reels_title">Instagram Reels (estimated)</string>
+    <string name="limit_instagram_time_title">Instagram open time</string>
+    <string name="limit_instagram_time_note">All time Instagram is on screen: feed, Stories, messages and Reels together. It isn\'t Reels-only time. Needs Usage Access.</string>
+    <string name="limit_youtube_time_title">YouTube open time</string>
+    <string name="limit_youtube_time_note">All time YouTube is on screen: Shorts and regular videos together. Shorts can\'t be told apart. Needs Usage Access.</string>
+    <string name="limit_reels_note">Optional. Needs Reels tracking (Accessibility), which some payment apps don\'t allow alongside them. An estimate of Reels you swipe to.</string>
+    <string name="limit_needs_usage_access">Not measured yet: needs Usage Access</string>
+    <string name="limit_needs_reels_tracking">Not measured: Reels tracking is off</string>
+    <string name="limit_off">Off. Time is still shown, with no limit or reminder.</string>
+    <string name="limit_switch_description">%1$s daily limit</string>
+    <string name="reminders_title">Limit reminders</string>
+    <string name="reminders_on_body">A notification when you near a limit and when you reach it. At most one of each per limit per day.</string>
+    <string name="reminders_off_body">Allow notifications to get a heads-up when you near or reach a limit. You\'ll still see limits on the dashboard without them.</string>
+    <string name="reminders_on">Reminders on</string>
+    <string name="reminders_allow">Allow notifications</string>
+    <string name="reminders_timing">App time is checked about every 15 minutes to save battery, so a reminder can arrive some minutes after you cross a limit (or later if the phone is saving power). Reels reminders come right away while Reels tracking is on.</string>
+    <string name="limit_current">Current limit: %1$d %2$s a day</string>
+    <string name="limit_custom_label">Custom limit</string>
+    <string name="limit_range_hint">Between %1$d and %2$d</string>
+    <string name="limit_error_number">Enter a whole number</string>
+    <string name="limit_error_range">Must be between %1$d and %2$d</string>
+    <string name="limit_save">Save limit</string>
+    <string name="limit_saved">Saved</string>
+    <string name="unit_reels">Reels</string>
+    <string name="unit_minutes">min</string>
+    <string name="threshold_title">Early warning</string>
+    <string name="threshold_body">At this share of a limit you get an early reminder, and the dashboard and Instagram counter turn amber.</string>
+    <string name="threshold_state">Warn at %1$d percent of a limit</string>
+
+    <!-- Analytics -->
+    <string name="period_day">Day</string>
+    <string name="period_week">Week</string>
+    <string name="period_month">Month</string>
+    <string name="period_year">Year</string>
+    <string name="analytics_previous">Previous period</string>
+    <string name="analytics_next">Next period</string>
+    <string name="analytics_reels_title">Instagram Reels (estimated)</string>
+    <string name="analytics_time_title">Instagram time</string>
+    <string name="analytics_youtube_title">YouTube time</string>
+    <string name="analytics_instagram_not_installed">Instagram charts appear once Instagram is installed.</string>
+    <string name="analytics_empty_title">No tracked data for this period</string>
+    <string name="analytics_empty_body">Nothing was being tracked during this time, so there\'s nothing to show. ScrollLess never fills gaps with made-up numbers.</string>
+    <string name="analytics_footnote">Reels are estimated from swipes in Instagram\'s Reels viewer. Days without tracking are marked \"Not tracked\" and left out of totals and averages.</string>
+    <string name="stat_total">Total</string>
+    <string name="stat_total_so_far">Total so far</string>
+    <string name="stat_daily_average">Daily average</string>
+    <string name="stat_monthly_average">Monthly average</string>
+    <string name="stat_peak">Highest</string>
+    <string name="stat_days_over_limit">Days at or over the limit: %1$d</string>
+    <string name="previous_day">the previous day</string>
+    <string name="previous_week">last week</string>
+    <string name="previous_month">last month</string>
+    <string name="previous_year">last year</string>
+    <string name="comparison_more">%1$s more than %2$s</string>
+    <string name="comparison_less">%1$s less than %2$s</string>
+    <string name="comparison_same">Same as %1$s</string>
+    <string name="comparison_none">No earlier tracked data to compare with.</string>
+    <string name="chart_limit_label">Limit %1$d</string>
+    <string name="chart_tap_hint">Tap a bar for details</string>
+    <string name="chart_legend_not_tracked">Not tracked</string>
+    <string name="chart_show_table">View as table</string>
+    <string name="chart_hide_table">Hide table</string>
+    <string name="chart_description">%1$s chart. Total %2$s. %3$d of %4$d periods tracked. Use View as table for each value.</string>
+
+    <!-- Permission setup -->
+    <string name="permissions_intro_title">How tracking works</string>
+    <string name="permissions_intro_body">ScrollLess measures two things, each with its own permission. You can turn on either one, both, or neither, and change your mind later. Nothing ScrollLess records leaves your phone.</string>
+    <string name="permission_status_enabled">Enabled</string>
+    <string name="permission_status_not_enabled">Not enabled</string>
+    <string name="permission_status_needs_consent">Needs your agreement</string>
+    <string name="permission_status_not_running">Enabled, but stopped</string>
+    <string name="permission_why_label">Why</string>
+    <string name="permission_feature_label">Used for</string>
+    <string name="permission_declined_label">If you skip it</string>
+
+    <string name="usage_access_title">Usage Access</string>
+    <string name="usage_access_why">Lets ScrollLess read how long Instagram and YouTube were on screen, using the screen-time records Android already keeps.</string>
+    <string name="usage_access_feature">Instagram and YouTube time today. Usage Access shows which app is open, not what you watch inside it, so it can\'t count Reels or Shorts by itself.</string>
+    <string name="usage_access_declined">App time shows as \"Not configured\".</string>
+    <string name="usage_access_enable">Open Usage Access settings</string>
+    <string name="usage_access_steps">In the list, choose ScrollLess and turn on \"Permit usage access\". Then come back here.</string>
+
+    <string name="accessibility_title">Reels tracking (Accessibility)</string>
+    <string name="accessibility_why">Lets ScrollLess notice when you swipe to a new Reel. It observes only Instagram, reacts only to scrolling, and reads the internal names of screen elements, never your messages, captions, comments or anything you type.</string>
+    <string name="accessibility_feature">An estimated count of Reels you swipe through each day and your Reels limit. Optionally, a small counter inside Instagram (off until you turn it on in Settings).</string>
+    <string name="accessibility_declined">The Reels count shows as \"Not configured\" and the counter isn\'t shown. Instagram time still works with Usage Access.</string>
+    <string name="accessibility_enable">Turn on Reels tracking</string>
+    <string name="accessibility_review_disclosure">Review disclosure</string>
+    <string name="accessibility_open_settings">Open Accessibility settings</string>
+    <string name="accessibility_steps">In Accessibility, open \"Installed apps\" or \"Downloaded apps\", choose ScrollLess, and turn it on. Then come back here.</string>
+    <string name="accessibility_not_running_help">Android has stopped the service, often because of battery saving. Turn ScrollLess off and on again in Accessibility settings, and set its battery usage to \"Unrestricted\" in App info.</string>
+    <string name="accessibility_restricted_help">Switch greyed out? If ScrollLess wasn\'t installed from the Play Store, Android 13 and later block this setting. Open App info, tap ⋮ (top right), choose \"Allow restricted settings\", then try again.</string>
+    <string name="open_app_info">Open App info</string>
+    <string name="accessibility_payment_note">Payment apps: some banking and payment apps refuse to open while an Accessibility service from another app is on. If one stops working, turn Reels tracking off here or in Settings. App-time limits keep working.</string>
+    <string name="action_turn_off_reels_tracking">Turn off Reels tracking</string>
+
+    <string name="instagram_missing_card">Instagram (com.instagram.android) isn\'t installed on this phone, so there\'s nothing to track yet.</string>
+    <string name="permissions_continue">Continue</string>
+    <string name="permissions_continue_later">You can finish or change this any time from Manage permissions.</string>
+
+    <string name="settings_open_failed_usage">Couldn\'t open Usage Access settings. Open Settings and search for \"Usage access\".</string>
+    <string name="settings_open_failed_accessibility">Couldn\'t open Accessibility settings. Open Settings and search for \"Accessibility\".</string>
+    <string name="settings_open_failed_app_info">Couldn\'t open App info. Open Settings › Apps › ScrollLess.</string>
+
+    <!-- Accessibility prominent disclosure (Google Play policy). Keep in sync with ACCESSIBILITY_DISCLOSURE_VERSION. -->
+    <string name="disclosure_title">Before you turn on Reels tracking</string>
+    <string name="disclosure_body">ScrollLess uses Android\'s Accessibility service to estimate how many Instagram Reels you swipe through.\n\nWhat it accesses:\n• Inside Instagram only, the scroll events of its screens and the internal names of the scrolling elements, so it can tell the Reels viewer apart from the feed.\n• Only if you turn on the optional Instagram counter: the name of the app that comes to the front in every app, so the counter appears in Instagram and hides everywhere else. Nothing else about other apps is read or stored.\n\nWhat it doesn\'t access: your messages, captions, comments, passwords, anything you type, or the content of any screen.\n\nWhat it stores: only the time of each estimated Reel, on this phone. Nothing is uploaded or shared. ScrollLess has no internet access.\n\nThe count is an estimate. Instagram doesn\'t tell other apps exactly what you watched.\n\nYou can hide the counter in Settings, and turn all of this off any time in Android\'s Accessibility settings.</string>
+    <string name="disclosure_banking_title">Payment and banking apps</string>
+    <string name="disclosure_banking_body">Some banking and payment apps (Paytm has been reported to) refuse to open, or limit what you can do, while any Accessibility service from another app is switched on. That includes ScrollLess Reels tracking. It\'s their own security check: ScrollLess doesn\'t hide from it or work around it.\n\nIf a payment app stops working, open ScrollLess › Settings and tap \"Turn off Reels tracking\". Instagram and YouTube time limits keep working without it.</string>
+    <string name="disclosure_accept">I understand, continue</string>
+    <string name="disclosure_decline">Not now</string>
+
+    <!-- Shown by Android in Accessibility settings. -->
+    <string name="accessibility_service_label">ScrollLess Reels tracking</string>
+    <string name="accessibility_service_description">Estimates how many Instagram Reels you swipe through. It observes only Instagram, reacts only to scrolling, and never reads text, messages or anything you type. If you turn on the optional counter, it also notes which app is in front (name only) to hide the counter outside Instagram. Data stays on your phone.</string>
+
+    <!-- Instagram counter overlay -->
+    <string name="overlay_text">Reels ≈%1$d / %2$d</string>
+    <string name="overlay_text_reached">Reels ≈%1$d / %2$d · limit reached</string>
+    <string name="overlay_content_description">ScrollLess: about %1$d Reels today, daily limit %2$d. Drag to move, long-press to hide.</string>
+    <string name="overlay_action_hide">Hide until Instagram is reopened</string>
+
+    <!-- Settings -->
+    <string name="settings_appearance">Appearance</string>
+    <string name="settings_theme">Theme</string>
+    <string name="theme_system">System</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="settings_counter">Instagram counter</string>
+    <string name="settings_counter_show">Show Reels counter in Instagram</string>
+    <string name="settings_counter_show_body">Optional. A small badge with today\'s count and limit; drag to move, long-press to hide until you next open Instagram. While on, Reels tracking also notes which app is in front (name only) so the badge never shows outside Instagram.</string>
+    <string name="settings_counter_needs_tracking">Needs Advanced Reels tracking. Set it up in Manage permissions.</string>
+    <string name="settings_counter_position">Counter position</string>
+    <string name="settings_counter_position_body">Drag the counter inside Instagram to move it.</string>
+    <string name="settings_counter_reset">Reset</string>
+    <string name="settings_payment_apps">Payment &amp; banking apps</string>
+    <string name="settings_payment_apps_body">The Instagram counter never appears over payment or banking apps, and ScrollLess reads nothing from them. If it can\'t tell which app is in front, it hides the counter to be safe.</string>
+    <string name="settings_payment_apps_detected">Installed and protected: %1$s</string>
+    <string name="settings_payment_apps_none_detected">None of the built-in payment apps (Google Pay, Paytm, PhonePe, BHIM, bank apps…) are installed. Add others below.</string>
+    <string name="settings_payment_apps_add_label">Add another app</string>
+    <string name="settings_payment_apps_add_hint">Its package name, from the app\'s Play Store link (id=…)</string>
+    <string name="settings_payment_apps_invalid">That isn\'t a valid package name</string>
+    <string name="settings_payment_apps_add">Add to protected apps</string>
+    <string name="settings_payment_apps_remove">Remove</string>
+    <string name="settings_tracking">Tracking</string>
+    <string name="payment_safety_intro">Two things on a phone can make banking and payment apps refuse to open. ScrollLess can\'t change how those apps decide, but it shows both here.</string>
+    <string name="payment_safety_reels_title">ScrollLess Reels tracking (Accessibility)</string>
+    <string name="payment_safety_reels_body">Some payment apps (Paytm has been reported to) refuse to open while any Accessibility service from another app is on. Turning Reels tracking off switches off only ScrollLess\'s service. Time limits keep working.</string>
+    <string name="payment_safety_developer_title">Developer options / USB debugging</string>
+    <string name="payment_safety_developer_body">Paytm and SBI YONO refuse to open while these are on, with or without ScrollLess. They\'re needed only for app development. ScrollLess never changes them.</string>
+    <string name="payment_safety_open_developer">Open Developer options</string>
+    <string name="payment_safety_state_on">On</string>
+    <string name="payment_safety_state_off">Off</string>
+    <string name="payment_safety_footer">ScrollLess never blocks, covers or reads payment apps. Usage Access only reads Android\'s screen-time records; it can\'t change other apps.</string>
+    <string name="settings_reels_turned_off">Reels tracking is off. Payment apps no longer see a ScrollLess Accessibility service.</string>
+    <string name="settings_turn_off_in_settings">Choose ScrollLess in the list and switch it off.</string>
+    <string name="settings_open_failed_notifications">Couldn\'t open notification settings. Open Settings › Apps › ScrollLess › Notifications.</string>
+    <string name="settings_open_failed_developer">Couldn\'t open Developer options. Open Settings and search for \"Developer options\".</string>
+    <string name="settings_privacy">Privacy</string>
+    <!-- App names used in limit copy -->
+    <string name="app_instagram">Instagram</string>
+    <string name="app_youtube">YouTube</string>
+
+    <!-- Limit alerts (notifications). App time is "open time": all of the app, not only Reels or Shorts. -->
+    <string name="notification_channel_limits">Limit reminders</string>
+    <string name="notification_channel_limits_body">A heads-up when you near or reach a daily limit you set. At most one per limit and level each day.</string>
+    <string name="alert_time_warning_title">%1$s: %2$s of %3$d min used</string>
+    <string name="alert_time_warning_body">You\'re close to today\'s %1$s limit. This is the time %1$s was open, not only Reels or Shorts.</string>
+    <string name="alert_time_reached_title">%1$s limit reached (%2$d min)</string>
+    <string name="alert_time_reached_body">%1$s has been open for %2$s today. Maybe time for a break?</string>
+    <string name="alert_reels_warning_title">About %1$d of %2$d Reels today</string>
+    <string name="alert_reels_reached_title">Reels limit reached (about %1$d)</string>
+    <string name="alert_reels_body">An estimate from Reels tracking. Counting continues; nothing is blocked.</string>
+
+    <string name="settings_privacy_body">Everything ScrollLess records stays on this phone. It has no internet permission, keeps no account, and excludes your data from cloud backups. It never reads messages, captions or what you type. Turning off a permission stops that tracking immediately.</string>
+</resources>
